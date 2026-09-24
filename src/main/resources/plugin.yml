@@ -1,0 +1,28 @@
+name: CrescentShop
+version: '1.0.0'
+main: io.bukkitcode.crescentshop.CrescentShop
+api-version: '1.12'
+authors: ['zip132sy']
+description: '一个自带经济系统的玩家商店插件，支持商店合集面板、搜索、自定义UI大小、上架商品，以及每日随机刷新的系统回收/出售商店。'
+softdepend: ['Vault']
+commands:
+    shop:
+        description: '打开商店合集面板 / 管理商店 / 系统商店'
+        aliases: ['sp', '商店']
+        usage: '/shop help'
+permissions:
+    crescentshop.use:
+        description: '使用商店基础功能（打开面板、购买、搜索）'
+        default: true
+    crescentshop.create:
+        description: '创建自己的商店'
+        default: true
+    crescentshop.sell:
+        description: '上架商品'
+        default: true
+    crescentshop.setsize:
+        description: '设置自己商店的界面大小'
+        default: true
+    crescentshop.admin:
+        description: '管理员权限（重载配置、管理任意商店）'
+        default: op

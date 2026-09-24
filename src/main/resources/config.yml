@@ -1,0 +1,119 @@
+# ==========================================================
+#  CrescentShop 配置文件
+#  配置结构版本，请勿手动修改，插件据此判断配置是否过期
+# ==========================================================
+config-version: 6
+
+# 经济相关设置
+economy:
+  # 货币显示名称
+  currency-name: "积分"
+  # 新玩家初始余额（仅内置经济生效）
+  start-balance: 100.0
+  # 转账待领取的过期天数（过期自动退回）
+  transfer-expire-days: 7
+  # 每个玩家最多同时持有的借款数量
+  max-loans-per-player: 5
+  # 每个玩家保留的收款记录条数
+  max-income-records: 50
+  # 逾期罚息（每天，Vault 不支持负数时生效）
+  overdue-penalty-per-day: 3.0
+
+# 玩家商店相关设置
+shop:
+  # 每格消耗的积分（创建商店按总格子数收费，上架按占用格子收费）
+  slot-cost: 2.5
+  # 上架手续费率（单价 * 数量 * 该比率）
+  sell-tax-rate: 0.05
+  # 商店默认界面行数（1-6）
+  default-rows: 4
+  # 商店界面允许的最小行数
+  min-rows: 1
+  # 商店界面允许的最大行数
+  max-rows: 6
+  # 商店名最大长度（不含颜色代码）
+  max-name-length: 24
+  # 是否允许使用大型地图画作为商店图标（false 则直接拒绝）
+  allow-large-map-icon: true
+  # 全服地图图标数量上限（防止 map_id 被大量占用）
+  max-map-icons: 50
+  # 图标选择列表中是否过滤技术性方块（活塞头、命令方块等）
+  filter-technical-items: true
+
+# 市场价相关设置
+market:
+  # 上架时自动定价的比率（市场价 * 该比率）
+  sell-ratio: 0.95
+  # 每种物品保留的玩家价格记录数量上限
+  max-records: 50
+  # 价格保护倍率：单条记录超过默认价 * 该倍率则忽略（防恶意刷价）
+  price-cap-multiplier: 10.0
+
+# 系统商店相关设置
+system-shop:
+  # 是否启用系统商店
+  enabled: true
+  # 每日随机挑选的物品数量
+  daily-items: 10
+  # 系统出售给玩家的价格倍率（回收价 * 该倍率）
+  buy-multiplier: 2.0
+  # 每日价格浮动幅度（0.3 表示上下浮动 30%）
+  price-fluctuation: 0.3
+
+  # 回收上限设置
+  recycle-limit:
+    # 是否开启每日回收上限
+    enabled: false
+    # 上限模式：fixed=固定数量，random=每日随机数量
+    mode: "fixed"
+    # fixed 模式下的固定上限
+    fixed-amount: 64
+    # random 模式下的随机下限
+    random-min: 16
+    # random 模式下的随机上限
+    random-max: 128
+
+  # 系统商店物品池
+  # 每日会从该池中随机挑选 daily-items 个物品作为当日回收/出售物品
+  # material 为物品材质名，base-price 为基准回收价
+  pool:
+    - material: "DIAMOND"
+      base-price: 50.0
+    - material: "IRON_INGOT"
+      base-price: 8.0
+    - material: "GOLD_INGOT"
+      base-price: 12.0
+    - material: "COAL"
+      base-price: 3.0
+    - material: "REDSTONE"
+      base-price: 4.0
+    - material: "SUGAR"
+      base-price: 5.0
+    - material: "EMERALD"
+      base-price: 30.0
+    - material: "QUARTZ"
+      base-price: 6.0
+    - material: "GLOWSTONE_DUST"
+      base-price: 7.0
+    - material: "NETHER_STALK"
+      base-price: 10.0
+    - material: "BLAZE_ROD"
+      base-price: 15.0
+    - material: "ENDER_PEARL"
+      base-price: 18.0
+    - material: "GHAST_TEAR"
+      base-price: 25.0
+    - material: "SLIME_BALL"
+      base-price: 9.0
+    - material: "LEATHER"
+      base-price: 2.0
+    - material: "STRING"
+      base-price: 2.0
+    - material: "BONE"
+      base-price: 2.0
+    - material: "FEATHER"
+      base-price: 1.0
+    - material: "WHEAT"
+      base-price: 1.5
+    - material: "CARROT"
+      base-price: 1.5
